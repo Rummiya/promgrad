@@ -2,9 +2,7 @@
 
 import { FormData, sendFormData } from '@/features/form/utils/sendFormData';
 import { useState } from 'react';
-
-import Input from './ui/Input';
-import SendBtn from './ui/SendBtn';
+import { Input, SendBtn } from './ui';
 
 import scss from './Form.module.scss';
 

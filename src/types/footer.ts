@@ -1,39 +1,39 @@
 import { StaticImageData } from 'next/image';
 import { JSX } from 'react';
 
-interface Contact {
+interface IContact {
 	value: string;
 	link: string;
 }
 
-interface Address {
+interface IAddress {
 	street: string;
 	floor: string;
 	link: string;
 }
 
-interface Email {
+interface IEmail {
 	value: string;
 	link: string;
 	icon: JSX.Element;
 }
 
-interface Icon {
+interface IPicture {
 	desktop: StaticImageData;
 	mobile: StaticImageData;
 }
 
-interface Social {
-	imageSrc: Icon;
+interface ISocial {
+	imageSrc: IPicture;
 	alt: string;
 	link: string;
 }
 
-export interface FootContent {
+export interface IFootContent {
 	title: string;
-	logo: Icon;
-	contacts: Contact[];
-	address: Address;
-	email: Email;
-	socials: Social[];
+	logo: IPicture;
+	contacts: IContact[];
+	address: IAddress;
+	email: IEmail;
+	socials: ISocial[];
 }

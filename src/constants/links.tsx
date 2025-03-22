@@ -12,10 +12,10 @@ import telegramIcon from '@/assets/Footer/socials/telegram.png';
 import whatsappBlueIcon from '@/assets/Footer/socials/whatsApp-blue.png';
 import whatsappIcon from '@/assets/Footer/socials/whatsApp.png';
 
-import { FootContent } from '@/types/footer';
+import { IFootContent } from '@/types/footer';
 import { CiMail } from 'react-icons/ci';
 
-export const mainFootContent: FootContent[] = [
+export const mainFootContent: IFootContent[] = [
 	{
 		title: 'ПРОМГРАДСТРОЙ',
 		logo: {
