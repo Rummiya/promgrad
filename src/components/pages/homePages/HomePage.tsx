@@ -1,12 +1,15 @@
-import React from "react";
-import Home from "./home/Welcome";
+import Contact from './home/Contact';
+import Location from './home/Location';
+import Home from './home/Welcome';
 
 const HomePage = () => {
-  return (
-    <>
-      <Home />
-    </>
-  );
+	return (
+		<>
+			<Home />
+			<Contact />
+			<Location />
+		</>
+	);
 };
 
 export default HomePage;
