@@ -6,6 +6,7 @@ import scss from "./Menu.module.scss";
 import { motion, AnimatePresence } from "framer-motion";
 import { useHeaderStore } from "@/Store/store";
 import { minHeadLinks } from "@/constants/links";
+import BurgerMenu from "./BurgerMenu";
 
 const Menu = forwardRef<HTMLDivElement>(() => {
   const { isOpen, setIsOpen } = useHeaderStore();
@@ -58,29 +59,43 @@ const Menu = forwardRef<HTMLDivElement>(() => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          className={`${scss.menu} ${isOpen ? scss.open : ""}`}
-          variants={menuVariants}
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-        >
-          <div>
-            {minHeadLinks.map((link, idx) => (
-              <motion.div
-                variants={linkVariants}
-                onClick={() => setIsOpen(false)}
-                key={idx}
-                className={scss.linkBox}
-              >
-                <Link href={link.link}>{link.title}</Link>
-              </motion.div>
-            ))}
-            <button onClick={() => setIsOpen(false)} className={scss.btn}>
-              Есть контакт!
-            </button>
-          </div>
-        </motion.div>
+        <>
+          <motion.div
+            className={scss.overlay}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+          />
+          <motion.div
+            className={`${scss.menu} ${isOpen ? scss.open : ""}`}
+            variants={menuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            <div>
+              <div className={scss.blockMenu}>
+                <BurgerMenu />
+              </div>
+              <div className={scss.minBlock}>
+                {minHeadLinks.map((link, idx) => (
+                  <motion.div
+                    variants={linkVariants}
+                    onClick={() => setIsOpen(false)}
+                    key={idx}
+                    className={scss.linkBox}
+                  >
+                    <Link href={link.link}>{link.title}</Link>
+                  </motion.div>
+                ))}
+                <button onClick={() => setIsOpen(false)} className={scss.btn}>
+                  Есть контакт!
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   );

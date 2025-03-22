@@ -1,49 +1,76 @@
-  #Header {
-    .horizontalHr {
-      width: 80%;
-      margin: 0 auto;
+#Header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: transparent;
+
+  .horizontalHr2 {
+    width: 95%;
+  }
+  .content {
+    position: relative;
+    width: 90%;
+    .horizontalHr1 {
+      position: absolute;
+      width: 105%;
+      left: 50%;
+      transform: translateX(-50%);
     }
-    .mainHead {
-      padding: 10px;
+    .upperHead {
+      padding: 10px 30px;
+      gap: 30px;
       display: flex;
-      position: relative;
+      align-items: center;
+      justify-content: space-between;
 
       .verticalHr {
-        height: 150px;
+        height: 130px;
         position: absolute;
-        left: 15%;
+        left: 0;
+        top: 15%;
       }
       .verticalHr2 {
+        height: 130px;
         position: absolute;
-        right: 15%;
-        height: 150px;
+        right: 0;
+        top: 15%;
       }
-      .content {
+      .mainNav {
+        width: 500px;
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        width: 67%;
-        margin: 0 auto;
-        .mainNav {
+
+        .mainLinks {
           display: flex;
           justify-content: space-between;
-          gap: 50px;
-          .mainLinks {
+          align-items: center;
+          font-weight: 300;
+          gap: 8px;
+
+          li {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            li {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            }
+            color: #2a4588;
+            font-size: clamp(10px, 1vw, 14px);
           }
         }
-        .messangers {
-          display: flex;
-          gap: 10px;
+      }
+
+      .messangers {
+        display: flex;
+        gap: 10px;
+        color: #2a4588;
+
+        a {
+          color: inherit;
+
           svg {
-            transition: 0.3s;
+            font-size: clamp(10px, 1vw, 14px);
+            transition: color 0.3s ease;
+
             &:hover {
               color: #ff8400;
             }
@@ -51,87 +78,100 @@
         }
       }
     }
+
     .minHead {
-      padding: 15px 10px;
-      width: 70%;
-      margin: 0 auto;
-      background: #E0E0E0;
-      .content {
+      padding: 15px;
+      width: 100%;
+      background: rgba(203, 203, 203, 0.56);
+      backdrop-filter: blur(1px);
+
+      .layer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         .minLogo {
           display: flex;
           align-items: center;
-          h4 {
+          gap: 5px;
+
+          h5 {
+            font-size: clamp(13px, 1vw, 15px);
             color: #2a4588;
+            line-height: 1.2;
           }
         }
+
         nav {
-          width: 100%;
           display: flex;
           justify-content: center;
           font-weight: 500;
           gap: max(10px, min(80px, 3vw));
+          color: #2a4588;
+
           a {
-            transition: 0.5s;
-            font-size: 18px;
-            // font-size: 18px;
+            transition: color 0.5s;
+            font-size: max(16px, min(18px, 1vw));
+            white-space: nowrap;
+            color: inherit;
+
             &:hover {
               color: #ff8400;
             }
           }
         }
+
         .btn {
-          width: 200px;
-          font-size: 18px;
+          font-size: max(16px, min(18px, 1vw));
           font-weight: 500;
-          padding: 8px 0;
+          padding: 8px 20px;
           background: none;
           border: solid 1px #ff8400;
-          transition: 0.5s;
+          transition: background-color 0.5s;
+          color: #000;
+
           &:hover {
             background: #ff8400;
           }
         }
       }
+
       .blockMenu {
         display: none;
       }
     }
   }
-  @media (max-width: 768px) {
-    #Header {
-      .horizontalHr {
-        display: none;
-      }
-      .mainHead {
-        display: none;
-      }
-      .minHead {
-        padding: 15px 0;
-        width: 85%;
-        margin: 0 auto;
-        background: none;
-        .content {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          .minLogo {
-            display: flex;
-            align-items: center;
+}
 
-            h4 {
-              font-size: clamp(10px, 2vw, 17px);
-              color: #2a4588;
-            }
-          }
+@media (max-width: 768px) {
+  #Header {
+    .horizontalHr {
+      display: none;
+    }
+    .horizontalHr2 {
+      display: none;
+    }
+
+    .content {
+      width: 100%;
+
+      .upperHead {
+        display: none;
+      }
+
+      .minHead {
+        background: none;
+        backdrop-filter: none;
+
+        .layer {
           nav {
             display: none;
           }
+
           .btn {
             display: none;
           }
+
           .blockMenu {
             display: flex;
           }
@@ -139,3 +179,4 @@
       }
     }
   }
+}

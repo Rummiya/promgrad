@@ -1,12 +1,13 @@
-import React from "react";
-import Home from "./home/Welcome";
+import Welcome from "./home/Welcome";
+import AboutUs from "./home/AboutUs";
 
 const HomePage = () => {
   return (
     <>
-      <Home />
+      <Welcome/>
+      <AboutUs/>
     </>
   );
 };
 
-export default HomePage;
+export default HomePage;  

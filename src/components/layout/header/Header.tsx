@@ -5,7 +5,7 @@ import { mainHeadLinks, minHeadLinks } from "@/constants/links";
 import { FaInstagram } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
-import logo from "@/assets/header/Image.svg";
+import logo from "@/assets/promgrad.svg";
 import Link from "next/link";
 import { useHeaderStore } from "@/Store/store";
 import { useEffect, useRef } from "react";
@@ -34,70 +34,72 @@ const Header = () => {
 
   return (
     <header id={scss.Header}>
-      <div className={scss.mainHead}>
-        <hr className={scss.verticalHr} />
+      <div className="container">
+      
         <div className={scss.content}>
-          <ol className={scss.mainNav}>
-            {mainHeadLinks.map((item, idx) => (
-              <div key={idx} className={scss.mainLinks}>
-                <li className={scss.icon}>{item.icon}</li>
-                <li>{item.title}</li>
-              </div>
-            ))}
-          </ol>
-          <div className={scss.messangers}>
-            <Link href={"/#"}>
-              <FaInstagram />
-            </Link>
-            <Link href={"/#"}>
-              <FaTelegram />
-            </Link>
-            <Link href={"/#"}>
-              <FaWhatsapp />
-            </Link>
-          </div>
-        </div>
-        <hr className={scss.verticalHr2} />
-      </div>
-      <hr className={scss.horizontalHr} />
-      <div className={scss.minHead}>
-        <div className={scss.content}>
-          <div className={scss.minLogo}>
-            <Image
-              src={logo}
-              alt="logo"
-              width={60}
-              height={60}
-              style={{
-                width: "clamp(40px, 7vw, 60px)",
-                height: "clamp(40px, 7vw, 60px)",
-              }}
-            />
-            <h4>
-              ПРОМ
-              <br />
-              ГРАД
-              <br />
-              СТРОЙ
-            </h4>
-          </div>
-          <nav>
-            {minHeadLinks.map((item, idx) => (
-              <Link href={item.link} key={idx}>
-                {item.title}
+          <div className={scss.upperHead}>
+            <ol className={scss.mainNav}>
+              {mainHeadLinks.map((item, idx) => (
+                <div key={idx} className={scss.mainLinks}>
+                  <li className={scss.icon}>{item.icon}</li>
+                  <li>{item.title}</li>
+                </div>
+              ))}
+            </ol>
+            <hr className={scss.verticalHr} />
+            <div className={scss.messangers}>
+              <Link href={"/#"}>
+                <FaInstagram />
               </Link>
-            ))}
-          </nav>
-          <div className={scss.blockMenu}>
-            <BurgerMenu />
-            <AnimatePresence>
-              {isOpen && <Menu ref={menuRef} />}
-            </AnimatePresence>
+              <Link href={"/#"}>
+                <FaTelegram />
+              </Link>
+              <Link href={"/#"}>
+                <FaWhatsapp />
+              </Link>
+            </div>
+            <hr className={scss.verticalHr2} />
           </div>
-          <button className={scss.btn}>Есть контакт!</button>
+          <hr className={scss.horizontalHr1} />
+          <div className={scss.minHead}>
+            <div className={scss.layer}>
+              <div className={scss.minLogo}>
+                <Image
+                  src={logo}
+                  alt="logo"
+                  priority
+                  style={{
+                    width: "clamp(40px, 5vw, 60px)",
+                    height: "clamp(40px, 5vw, 60px)",
+                  }}
+                />
+                <h5>
+                  ПРОМ
+                  <br />
+                  ГРАД
+                  <br />
+                  СТРОЙ
+                </h5>
+              </div>
+              <nav>
+                {minHeadLinks.map((item, idx) => (
+                  <Link href={item.link} key={idx}>
+                    {item.title}
+                  </Link>
+                ))}
+              </nav>
+              <div className={scss.blockMenu}>
+                <BurgerMenu />
+                <AnimatePresence>
+                  {isOpen && <Menu ref={menuRef} />}
+                </AnimatePresence>
+              </div>
+              <button className={scss.btn}>Есть контакт!</button>
+            </div>
+          </div>
         </div>
+        <hr className={scss.horizontalHr2} />
       </div>
-      <hr className={scss.horizontalHr} />
     </header>
   );
 };
