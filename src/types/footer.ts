@@ -30,6 +30,7 @@ interface ISocial {
 }
 
 export interface IFootContent {
+	id: number;
 	title: string;
 	logo: IPicture;
 	contacts: IContact[];

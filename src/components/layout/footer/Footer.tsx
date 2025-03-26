@@ -3,9 +3,9 @@
 import { mainFootContent, minFootLinks } from '@/constants/links';
 import { useState } from 'react';
 
+import CompanyInfo from '../../ui/CompanyInfo';
+import DropdownMenu from '../../ui/DropdownMenu';
 import scss from './Footer.module.scss';
-import FooterContacts from './FooterContacts';
-import FooterMobileMenu from './FooterMobileMenu';
 
 const Footer = () => {
 	const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -15,20 +15,22 @@ const Footer = () => {
 	};
 
 	return (
-		<footer className={scss.Footer}>
+		<footer id={scss.Footer}>
 			<div className='container'>
 				<h2>Контакты</h2>
 
-				<FooterContacts />
+				<div className={scss.desktopContent}>
+					<CompanyInfo />
+				</div>
 
 				<div className={scss.mobileContent}>
 					{mainFootContent.map((data, index) => (
-						<FooterMobileMenu
+						<DropdownMenu
 							data={data}
 							isActive={openIndex === index}
 							index={index}
 							toggleDropdown={toggleDropdown}
-							key={data.title}
+							key={data.id}
 						/>
 					))}
 				</div>

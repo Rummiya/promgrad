@@ -1,14 +1,14 @@
 import { mainFootContent } from '@/constants/links';
 import Image from 'next/image';
 
-import scss from './Footer.module.scss';
+import scss from './CompanyInfo.module.scss';
 
-const FooterContacts = () => {
+const CompanyInfo = () => {
 	return (
 		<div className={scss.mainContent}>
 			{mainFootContent.map(
-				({ title, logo, contacts, address, email, socials }) => (
-					<div className={scss.mainContentItem} key={title}>
+				({ id, title, logo, contacts, address, email, socials }) => (
+					<div className={scss.mainContentItem} key={id}>
 						<div className={scss.logo}>
 							<Image src={logo.desktop} alt={title} />
 							<h4>{title}</h4>
@@ -41,4 +41,4 @@ const FooterContacts = () => {
 	);
 };
 
-export default FooterContacts;
+export default CompanyInfo;

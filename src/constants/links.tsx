@@ -17,6 +17,7 @@ import { CiMail } from 'react-icons/ci';
 
 export const mainFootContent: IFootContent[] = [
 	{
+		id: 1,
 		title: 'ПРОМГРАДСТРОЙ',
 		logo: {
 			desktop: promgradLogo,
@@ -78,6 +79,7 @@ export const mainFootContent: IFootContent[] = [
 		],
 	},
 	{
+		id: 2,
 		title: 'BIM.KG',
 		logo: {
 			desktop: bimLogo,
@@ -139,6 +141,7 @@ export const mainFootContent: IFootContent[] = [
 		],
 	},
 	{
+		id: 3,
 		title: 'Archi Vibe',
 		logo: {
 			desktop: archiLogo,

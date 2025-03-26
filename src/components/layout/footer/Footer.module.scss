@@ -1,4 +1,4 @@
-.Footer {
+#Footer {
 	background-color: #e0e0e0;
 	padding: 50px 0;
 
@@ -14,263 +14,13 @@
 		margin-bottom: 50px;
 	}
 
-	.logo {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		min-width: 200px;
-
-		img {
-			width: 50px;
-			object-fit: contain;
-
-			fill: gray;
-		}
-
-		h4 {
-			font-size: 18px;
-			font-weight: 400;
-			letter-spacing: 0.5px;
-		}
-	}
-
-	.numbers {
-		display: flex;
-		flex-direction: column;
-		gap: 8px;
-
-		p {
-			margin: 0;
-			font-size: 14px;
-			font-weight: 400;
-			letter-spacing: 0.5px;
-		}
-
-		a {
-			text-decoration: underline;
-			color: #333;
-			font-weight: 400;
-			letter-spacing: 0.5px;
-			transition: color 0.2s ease-in-out;
-
-			&:hover {
-				color: #ff6f00;
-			}
-		}
-	}
-
-	.address {
-		font-size: 14px;
-
-		a {
-			text-decoration: underline;
-			color: #333;
-			font-weight: 400;
-			letter-spacing: 0.5px;
-			transition: color 0.2s ease-in-out;
-
-			&:hover {
-				color: #ff6f00;
-			}
-		}
-
-		p {
-			font-weight: 400;
-			letter-spacing: 0.5px;
-			margin-top: 8px;
-		}
-	}
-
-	.email {
-		font-size: 14px;
-		font-weight: 400;
-		letter-spacing: 0.5px;
-
-		a {
-			transition: color 0.2s ease-in-out;
-
-			&:hover {
-				color: #ff6f00;
-			}
-		}
-	}
-
-	.socials {
-		display: flex;
-		gap: 17px;
-
-		a {
-			img {
-				width: 40px;
-				height: 40px;
-				transition: opacity 0.2s ease-in-out;
-
-				&:hover {
-					opacity: 0.8;
-				}
-			}
-		}
-	}
-
-	.mainContent {
-		display: flex;
-		flex-direction: column;
+	.desktopContent {
 		width: 100%;
-
-		margin-bottom: 125px;
-	}
-
-	.mainContentItem {
-		display: grid;
-		grid-template-columns: 233px 153px 153px 102px 153px;
-		justify-content: space-between;
-		align-items: center;
-
-		padding: 25px 0;
-		position: relative;
-
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			width: calc(100vw - 60px);
-			height: 1px;
-			background: linear-gradient(
-				90deg,
-				white 0%,
-				white 0.5%,
-				black 10%,
-				black 90%,
-				white 99.5%,
-				white 100%
-			);
-			transform: translateX(-50%);
-		}
-
-		&:first-child {
-			padding-top: 0;
-		}
-
-		&:last-child {
-			&::after {
-				display: none;
-			}
-		}
 	}
 
 	.mobileContent {
 		display: none;
 		width: 100%;
-	}
-
-	.mobileContentItem {
-		padding: 25px 0;
-		position: relative;
-
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			width: calc(100vw - 60px);
-			height: 1px;
-			background: linear-gradient(
-				90deg,
-				white 0%,
-				white 0.5%,
-				#2a4588 10%,
-				#2a4588 90%,
-				white 99.5%,
-				white 100%
-			);
-			transform: translateX(-50%);
-		}
-
-		&:first-child {
-			&::before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 50%;
-				width: calc(100vw - 60px);
-				height: 1px;
-				background: linear-gradient(
-					90deg,
-					white 0%,
-					white 0.5%,
-					#2a4588 10%,
-					#2a4588 90%,
-					white 99.5%,
-					white 100%
-				);
-				transform: translateX(-50%);
-			}
-		}
-
-		.socials {
-			justify-content: end;
-		}
-
-		.numbers {
-			a {
-				color: #2a4588;
-			}
-		}
-
-		.address {
-			color: #2a4588;
-			a {
-				color: #2a4588;
-			}
-		}
-
-		.email {
-			a {
-				color: #2a4588;
-			}
-		}
-
-		button {
-			width: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			background-color: transparent;
-
-			h4 {
-				color: #2a4588;
-			}
-		}
-
-		.icon {
-			transition: transform 0.3s;
-		}
-
-		.open {
-			transform: rotate(180deg);
-		}
-
-		.dropdown {
-			overflow: hidden;
-			max-height: 0;
-			transition: max-height 0.3s ease-in-out;
-		}
-
-		.expanded {
-			max-height: 330px;
-		}
-
-		.dropdownContent {
-			padding: 20px 40px;
-		}
-
-		.dropdownContentItem {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			margin-bottom: 30px;
-		}
 	}
 
 	.minContent {
@@ -329,29 +79,15 @@
 	}
 }
 
-@media (max-width: 1024px) {
-	.Footer {
-		.mainContentItem {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: end;
-			justify-content: space-between;
-			gap: 30px;
-
-			.logo {
-				width: 100%;
-			}
-		}
-	}
-}
-
 @media (max-width: 768px) {
-	.Footer {
+	#Footer {
+		background: #fff;
+
 		h2 {
 			display: block;
 		}
 
-		.mainContent {
+		.desktopContent {
 			display: none;
 		}
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Loader from '@/components/ui/loader/loader';
+import Loader from '@/components/ui/loader';
 import scss from './SendBtn.module.scss';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {

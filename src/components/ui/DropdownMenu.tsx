@@ -3,18 +3,18 @@ import locationIcon from '@/assets/Footer/icons/location.png';
 import mailIcon from '@/assets/Footer/icons/mail.png';
 import phoneIcon from '@/assets/Footer/icons/phone.png';
 
-import { FootContent } from '@/types/footer';
+import { IFootContent } from '@/types/footer';
 import Image from 'next/image';
 
-import scss from './Footer.module.scss';
+import scss from './DropdownMenu.module.scss';
 
-const FooterMobileMenu = ({
+const DropdownMenu = ({
 	data,
 	isActive,
 	index,
 	toggleDropdown,
 }: {
-	data: FootContent;
+	data: IFootContent;
 	isActive: boolean;
 	index: number;
 	toggleDropdown: (index: number) => void;
@@ -74,4 +74,4 @@ const FooterMobileMenu = ({
 	);
 };
 
-export default FooterMobileMenu;
+export default DropdownMenu;

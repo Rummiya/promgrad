@@ -1,4 +1,4 @@
-.location {
+#location {
 	h2 {
 		display: none;
 		color: #2a4588;
@@ -11,9 +11,15 @@
 }
 
 @media (max-width: 768px) {
-	.location {
+	#location {
 		h2 {
 			display: block;
 		}
+	}
+}
+
+@media (max-width: 425px) {
+	#location {
+		padding: 0 20px;
 	}
 }

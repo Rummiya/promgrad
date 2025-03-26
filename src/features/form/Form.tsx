@@ -1,10 +1,12 @@
 'use client';
 
-import { FormData, sendFormData } from '@/features/form/utils/sendFormData';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Input, SendBtn } from './ui';
 
 import scss from './Form.module.scss';
+
+import { hasErrorField, sendFormData } from './utils';
+import { FormData } from './utils/sendFormData';
 
 const Form = () => {
 	const [formData, setFormData] = useState<FormData>({
@@ -14,6 +16,10 @@ const Form = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [isSuccess, setIsSuccess] = useState(false);
 	const [error, setError] = useState<string | null>(null);
+
+	useEffect(() => {
+		setError(null);
+	}, [formData]);
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -25,21 +31,27 @@ const Form = () => {
 				setError('Заполните все поля');
 				return;
 			}
-
 			if (formData.phone_number.length < 16) {
 				setError('Некорректный номер телефона');
 				return;
 			}
 
 			const cleanedPhoneNumber = formData.phone_number.replace(/\s+/g, '');
-
 			await sendFormData({ ...formData, phone_number: cleanedPhoneNumber });
 
 			setIsSuccess(true);
 			setFormData({ name: '', phone_number: '' });
 			setTimeout(() => setIsSuccess(false), 1000);
 		} catch (err) {
-			setError('Ошибка при отправке формы. Попробуйте снова.');
+			if (hasErrorField(err)) {
+				const errMessage = err.message.includes('phone number')
+					? 'Некорректный номер телефона'
+					: 'Ошибка при отправке формы. Попробуйте снова';
+				setError(errMessage);
+			} else {
+				setError('Ошибка при отправке формы. Попробуйте снова');
+			}
+			console.log('form', err);
 		} finally {
 			setIsLoading(false);
 		}

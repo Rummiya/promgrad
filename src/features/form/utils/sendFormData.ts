@@ -5,7 +5,7 @@ export interface FormData {
 
 export const sendFormData = async (data: FormData): Promise<void> => {
 	try {
-		const response = await fetch('http://51.21.192.132/api/contact/', {
+		const response = await fetch('http://16.171.24.1/api/contact/', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -14,7 +14,11 @@ export const sendFormData = async (data: FormData): Promise<void> => {
 		});
 
 		if (!response.ok) {
-			throw new Error('Ошибка при отправке формы');
+			const errorData = await response.json();
+			const phoneErr = errorData.phone_number?.[0];
+
+			console.log(phoneErr);
+			throw new Error(phoneErr);
 		}
 
 		console.log('Форма успешно отправлена!');

@@ -2,7 +2,7 @@
 
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-const api_key = process.env.GOOGLE_MAP_API_KEY || '';
+const api_key = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '';
 
 const Map = () => {
 	// Координаты для центра карты и метки

@@ -1,4 +1,4 @@
-.contact {
+#contact {
 	padding: 100px 0;
 
 	h2 {
@@ -26,7 +26,7 @@
 }
 
 @media (max-width: 1024px) {
-	.contact {
+	#contact {
 		h2 {
 			font-size: 40px;
 		}
@@ -42,7 +42,7 @@
 }
 
 @media (max-width: 768px) {
-	.contact {
+	#contact {
 		padding: 60px 0;
 
 		h2 {
@@ -63,7 +63,7 @@
 }
 
 @media (max-width: 480px) {
-	.contact {
+	#contact {
 		padding: 40px 0;
 
 		// h2 {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatPhoneNumber } from '../utils/formatPhoneNumber';
+import { formatPhoneNumber } from '../utils';
 import { FormData } from '../utils/sendFormData';
 import scss from './Input.module.scss';
 
@@ -20,7 +20,10 @@ const Input: React.FC<Props> = ({
 
 		setFormData({
 			...formData,
-			[name]: name === 'phone_number' ? formatPhoneNumber(value) : value,
+			[name]:
+				name === 'phone_number'
+					? formatPhoneNumber(value)
+					: value.replace(/[^A-Za-zА-Яа-яЁё\s'-]/g, ''),
 		});
 	};
 

@@ -1,4 +1,4 @@
-import scss from './loader.module.scss';
+import scss from './Loader.module.scss';
 
 const Loader = () => {
 	return <div className={scss.loader}></div>;
