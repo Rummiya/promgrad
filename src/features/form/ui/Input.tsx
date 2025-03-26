@@ -6,11 +6,13 @@ import scss from './Input.module.scss';
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 	formData: FormData;
 	setFormData: (formData: FormData) => void;
+	variant: 'primary' | 'secondary';
 }
 
 const Input: React.FC<Props> = ({
 	formData,
 	setFormData,
+	variant,
 	name,
 	className,
 	...props
@@ -33,9 +35,11 @@ const Input: React.FC<Props> = ({
 		}
 	};
 
+	const colorVariant = variant === 'primary' ? scss.primary : scss.secondary;
+
 	return (
 		<input
-			className={`${scss.input} ${className || ''}`}
+			className={`${scss.input} ${className || ''} ${colorVariant}`}
 			name={name}
 			value={formData[name as keyof FormData]}
 			onChange={handleChange}

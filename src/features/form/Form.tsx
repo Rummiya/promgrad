@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Input, SendBtn } from './ui';
 
 import scss from './Form.module.scss';
@@ -8,7 +8,11 @@ import scss from './Form.module.scss';
 import { hasErrorField, sendFormData } from './utils';
 import { FormData } from './utils/sendFormData';
 
-const Form = () => {
+interface IForm {
+	variant?: 'primary' | 'secondary';
+}
+
+const Form: FC<IForm> = ({ variant = 'primary' }) => {
 	const [formData, setFormData] = useState<FormData>({
 		name: '',
 		phone_number: '',
@@ -65,6 +69,7 @@ const Form = () => {
 				placeholder={'Имя...'}
 				formData={formData}
 				setFormData={setFormData}
+				variant={variant}
 			/>
 			<Input
 				name={'phone_number'}
@@ -72,9 +77,15 @@ const Form = () => {
 				placeholder={'Телефон...'}
 				formData={formData}
 				setFormData={setFormData}
+				variant={variant}
 			/>
 
-			<SendBtn isLoading={isLoading} isSuccess={isSuccess} type='submit'>
+			<SendBtn
+				isLoading={isLoading}
+				isSuccess={isSuccess}
+				variant={variant}
+				type='submit'
+			>
 				Оставить заявку
 			</SendBtn>
 

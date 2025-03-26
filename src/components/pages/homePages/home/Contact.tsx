@@ -11,7 +11,7 @@ const Contact = () => {
 				<h2>Давайте обсудим ваш проект</h2>
 				<div className={scss.contentWrapper}>
 					<Image src={contactImage} alt='contact-image' />
-					<From />
+					<From variant={'secondary'} />
 				</div>
 			</div>
 		</section>
