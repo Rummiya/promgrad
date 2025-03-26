@@ -3,13 +3,13 @@ import { formatPhoneNumber } from '../utils';
 import { FormData } from '../utils/sendFormData';
 import scss from './Input.module.scss';
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	formData: FormData;
 	setFormData: (formData: FormData) => void;
 	variant: 'primary' | 'secondary';
 }
 
-const Input: React.FC<Props> = ({
+const Input: React.FC<InputProps> = ({
 	formData,
 	setFormData,
 	variant,

@@ -3,13 +3,13 @@ import React from 'react';
 
 import scss from './SendBtn.module.scss';
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface SendBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	isLoading?: boolean;
 	isSuccess?: boolean;
 	variant: 'primary' | 'secondary';
 }
 
-const SendBtn: React.FC<Props> = ({
+const SendBtn: React.FC<SendBtnProps> = ({
 	isLoading,
 	isSuccess,
 	variant,

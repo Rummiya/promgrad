@@ -8,11 +8,11 @@ import scss from './Form.module.scss';
 import { hasErrorField, sendFormData } from './utils';
 import { FormData } from './utils/sendFormData';
 
-interface IForm {
+interface FormProps {
 	variant?: 'primary' | 'secondary';
 }
 
-const Form: FC<IForm> = ({ variant = 'primary' }) => {
+const Form: FC<FormProps> = ({ variant = 'primary' }) => {
 	const [formData, setFormData] = useState<FormData>({
 		name: '',
 		phone_number: '',
