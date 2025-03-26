@@ -1,6 +1,40 @@
 import imageOne from "@/assets/aboutImages/archiitect.png";
 import imageTwo from "@/assets/aboutImages/center.png";
 import imageThree from "@/assets/aboutImages/chert.png";
+import promgrad from "@/assets/promgrad.svg";
+import bimkg from "@/assets/Bim.svg";
+import archivibe from "@/assets/Archi.svg";
+import {
+  promgradImg1,
+  promgradImg2,
+  promgradImg3,
+  promgradImg4,
+  promgradImg5,
+  promgradImg6,
+  promgradImg7,
+  promgradImg8,
+} from "@/assets/portfolio/promgrad";
+import {
+  bimKgImg1,
+  bimKgImg2,
+  bimKgImg3,
+  bimKgImg4,
+  bimKgImg5,
+  bimKgImg6,
+  bimKgImg7,
+  bimKgImg8,
+} from "@/assets/portfolio/bimkg";
+import {
+  archiVibeImg1,
+  archiVibeImg2,
+  archiVibeImg3,
+  archiVibeImg4,
+  archiVibeImg5,
+  archiVibeImg6,
+  archiVibeImg7,
+  archiVibeImg8,
+} from "@/assets/portfolio/archivibe";
+
 import { StaticImageData } from "next/image";
 
 interface IAboutImage {
@@ -27,5 +61,50 @@ export const AboutImages: IAboutImage[] = [
     text: "Разрабатываем надёжные и экономически эффективные конструкции, гарантирующие прочность и долговечность зданий. Опираясь на расчёты, современные технологии и строительные нормы, мы создаём проекты, которые выдерживают нагрузки, соответствуют требованиям безопасности и обеспечивают устойчивость объектов в любых условиях.",
     images: imageThree,
     id: 3,
+  },
+];
+
+interface GalleryCategory {
+logo:StaticImageData;
+  category: string;
+  images: [
+    [StaticImageData, StaticImageData[]],
+    [StaticImageData[], StaticImageData]
+  ];
+}
+
+export const galleryData: GalleryCategory[] = [
+  {
+    logo:promgrad,
+    category: "Промградстрой",
+    images: [
+      [promgradImg1, [promgradImg2, promgradImg3]],
+      [
+        [promgradImg4, promgradImg5, promgradImg6, promgradImg7],
+        promgradImg8,
+      ],
+    ],
+  },
+  {
+    logo:bimkg,
+    category: "BIM.KG",
+    images: [
+      [bimKgImg1, [bimKgImg2, bimKgImg3]],
+      [
+        [bimKgImg4, bimKgImg5, bimKgImg6, bimKgImg7],
+        bimKgImg8,
+      ],
+    ],    
+  },
+  {
+    logo:archivibe,
+    category: "Archi Vibe",
+    images: [
+      [archiVibeImg1, [archiVibeImg2, archiVibeImg3]],
+      [
+        [archiVibeImg4, archiVibeImg5, archiVibeImg6, archiVibeImg7],
+        archiVibeImg8,
+      ],
+    ],
   },
 ];
