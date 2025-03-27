@@ -6,9 +6,9 @@ import phoneIcon from '@/assets/Footer/icons/phone.png';
 import { IFootContent } from '@/types/footer';
 import Image from 'next/image';
 
-import scss from './DropdownMenu.module.scss';
+import scss from './MobileContacts.module.scss';
 
-const DropdownMenu = ({
+const MobileContacts = ({
 	data,
 	isActive,
 	index,
@@ -25,13 +25,21 @@ const DropdownMenu = ({
 		<div className={scss.mobileContentItem} key={title}>
 			<button onClick={() => toggleDropdown(index)}>
 				<div className={scss.logo}>
-					<Image src={logo.mobile} alt={title} />
+					<Image
+						src={logo.mobile}
+						alt={title}
+						width={50}
+						height={50}
+						priority
+					/>
 					<h4>{title}</h4>
 				</div>
 				<Image
 					className={`${scss.arrow} ${isActive ? scss.open : ''}`}
 					src={arrowIcon}
 					alt={arrowIcon.src}
+					width={20}
+					height={9}
 				/>
 			</button>
 			<div className={`${scss.dropdown} ${isActive ? scss.expanded : ''}`}>
@@ -64,7 +72,7 @@ const DropdownMenu = ({
 					<div className={scss.socials}>
 						{socials.map(({ imageSrc, alt, link }) => (
 							<a href={link} key={alt}>
-								<Image src={imageSrc.mobile} alt={alt} />
+								<Image src={imageSrc.mobile} alt={alt} width={40} height={40} />
 							</a>
 						))}
 					</div>
@@ -74,4 +82,4 @@ const DropdownMenu = ({
 	);
 };
 
-export default DropdownMenu;
+export default MobileContacts;

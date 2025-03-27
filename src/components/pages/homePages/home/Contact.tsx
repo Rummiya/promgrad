@@ -10,7 +10,12 @@ const Contact = () => {
 			<div className='container'>
 				<h2>Давайте обсудим ваш проект</h2>
 				<div className={scss.contentWrapper}>
-					<Image src={contactImage} alt='contact-image' />
+					<Image
+						src={contactImage}
+						alt='contact-image'
+						style={{ width: '100%', height: '100%' }}
+						priority
+					/>
 					<From variant={'secondary'} />
 				</div>
 			</div>

@@ -3,8 +3,8 @@
 import { mainFootContent, minFootLinks } from '@/constants/links';
 import { useState } from 'react';
 
-import CompanyInfo from '../../ui/CompanyInfo';
-import DropdownMenu from '../../ui/DropdownMenu';
+import DesktopContacts from '../../ui/DesktopContacts';
+import MobileContacts from '../../ui/MobileContacts';
 import scss from './Footer.module.scss';
 
 const Footer = () => {
@@ -20,12 +20,12 @@ const Footer = () => {
 				<h2>Контакты</h2>
 
 				<div className={scss.desktopContent}>
-					<CompanyInfo />
+					<DesktopContacts />
 				</div>
 
 				<div className={scss.mobileContent}>
 					{mainFootContent.map((data, index) => (
-						<DropdownMenu
+						<MobileContacts
 							data={data}
 							isActive={openIndex === index}
 							index={index}
