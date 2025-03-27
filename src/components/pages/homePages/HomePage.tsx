@@ -1,17 +1,16 @@
-import React from "react";
-import Home from "./home/Welcome";
-import ImageAbout from "./home/ImageAbout";
-import Portfolio from "./home/Portfolio";
+import ImageAbout from './home/ImageAbout';
+import Portfolio from './home/Portfolio';
+import Home from './home/Welcome';
 
 const HomePage = () => {
-  return (
-    <>
-      <Home />
-      {/* <ImageAbout/> */}
+	return (
+		<>
+			<Home />
+			<ImageAbout />
 
-      <Portfolio/>
-    </>
-  );
+			<Portfolio />
+		</>
+	);
 };
 
 export default HomePage;
