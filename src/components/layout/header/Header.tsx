@@ -35,7 +35,6 @@ const Header = () => {
   return (
     <header id={scss.Header}>
       <div className="container">
-      
         <div className={scss.content}>
           <div className={scss.upperHead}>
             <ol className={scss.mainNav}>

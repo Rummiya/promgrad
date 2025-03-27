@@ -1,0 +1,25 @@
+#location {
+	h2 {
+		display: none;
+		color: #2a4588;
+		font-size: 24px;
+		font-weight: 600;
+		text-align: center;
+		letter-spacing: 0.25px;
+		margin-bottom: 50px;
+	}
+}
+
+@media (max-width: 768px) {
+	#location {
+		h2 {
+			display: block;
+		}
+	}
+}
+
+@media (max-width: 425px) {
+	#location {
+		padding: 0 20px;
+	}
+}
