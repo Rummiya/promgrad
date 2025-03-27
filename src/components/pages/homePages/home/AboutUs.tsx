@@ -4,7 +4,6 @@ import scss from "./AboutUs.module.scss";
 import Image, { StaticImageData } from "next/image";
 import article from "@/assets/Image.png";
 import { infos } from "@/constants/links";
-import { useSize } from "@/hooks";
 
 interface IInfosType {
   id: number;
@@ -20,25 +19,12 @@ interface IInfosType {
 export const AboutUs = () => {
   const [activeInfo, setActiveInfo] = useState<IInfosType>(infos[0]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const images = useRef<Map<number, HTMLImageElement | null>>(new Map());
-  const size = useSize("#title");
-  const handleIconClick = (info: IInfosType, index: number) => {
-    setActiveInfo(info);
-    setActiveIndex(index);
-  };
+  const imagesRef = useRef<Map<number, HTMLDivElement | null>>(new Map());
 
-  const GetAnchor = (index: number) => {
-    const el = images.current.get(index);
-    if (el && index !==0) {
-      const rect = el.getBoundingClientRect();
-      return rect.left;
-    }
-    return size.width + 10;
-  };
+
 
   return (
     <section id={scss.aboutUs}>
-      {}
       <div className="container">
         <div className={scss.about}>
           <div className={scss.images}>
@@ -53,42 +39,31 @@ export const AboutUs = () => {
           </p>
         </div>
         <div className={scss.box}>
-          {GetAnchor(activeIndex)}
           <div className={scss.logos}>
             {infos.map((info, index) => (
               <div
                 key={index}
-                className={scss.icon}
-                onClick={() => handleIconClick(info, index)}
+                ref={(el) => {
+                  imagesRef.current.set(index, el);
+                }}
+                className={`${scss.icon} ${
+                  activeIndex === index ? scss.active : ""
+                }`}
+                onClick={() => {
+                  setActiveInfo(info);
+                  setActiveIndex(index);
+                }}
               >
-                <Image
-                  ref={(e) => {
-                    images.current.set(index, e);
-                  }}
-                  className={scss.img}
-                  src={info.img}
-                  alt={info.title}
-                />
+                <Image className={scss.img} src={info.img} alt={info.title} />
               </div>
             ))}
+            <div/>
           </div>
           <div className={scss.information}>
             <div className={scss.mainInfo}>
               <div id="title" className={scss.lines}>
                 <h2>{activeInfo.title}</h2>
-                <hr
-                  className={scss.horizontalHr}
-                  style={{
-                    left: GetAnchor(activeIndex),
-                  }}
-                />
               </div>
-              <hr
-                className={scss.line}
-                style={{
-                  width: GetAnchor(activeIndex),
-                }}
-              />
               <h5>{activeInfo.type}</h5>
             </div>
             <div className={scss.infoCard}>

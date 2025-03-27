@@ -68,6 +68,7 @@ const Header = () => {
                   src={logo}
                   alt="logo"
                   priority
+                  
                   style={{
                     width: "clamp(40px, 5vw, 60px)",
                     height: "clamp(40px, 5vw, 60px)",

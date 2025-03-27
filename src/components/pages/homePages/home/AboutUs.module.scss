@@ -27,21 +27,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 90%;
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
     gap: 50px;
 
     .logos {
-      width: 90%;
-      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
       .icon {
+        margin: 0 auto;
+        align-items: center;
+        display: flex;
+        justify-content: center;
         .img {
-          // width: 185px;
-          width: 100%;
-          border: 2px solid red;
+          width: 80%;
           height: auto;
         }
       }
@@ -54,30 +55,15 @@
         .lines {
           position: relative;
           display: flex;
-          width: max-content;
-        }
-        .horizontalHr {
-          position: absolute;
-          height: 42px;
-          border: 1px solid #ff6f00;
-          transition: left 0.3s ease;
-          top: 2vh;
-        }
-        .line {
-          border: 1px solid #ff6f00;
-          transition: 0.3s;
-          position: fixed;
-          bottom: 100px;
-          left: 0;
         }
         h2 {
-          font-size: clamp(23px, 3vw, 48px);
+          font-size: clamp(23px, 5vw, 48px);
           font-weight: 600;
           color: #2a4588;
         }
         h5 {
           padding-top: 10px;
-          font-size: clamp(12px, 1vw, 18px);
+          font-size: clamp(12px, 2vw, 18px);
           font-weight: 500;
           color: #3a6ea5;
         }
@@ -85,8 +71,7 @@
       .infoCard {
         line-height: clamp(24px, 3vw, 32px);
         p {
-          font-size: clamp(12px, 1vw, 18px);
-
+          font-size: clamp(14px, 3vw, 18px);
           font-weight: 400;
           color: #3a6ea5;
         }
@@ -99,13 +84,11 @@
         p {
           display: flex;
           flex-direction: column;
-          // padding: 0 32px;
           color: #2a4588;
           font-weight: 700;
-          // font-size: clamp(18px, 3vw, 20px);
-
+          font-size: clamp(12px, 4vw, 20px);
           strong {
-            font-size: clamp(40px, 5vw, 60px);
+            font-size: clamp(35px, 5vw, 60px);
           }
         }
       }
@@ -113,11 +96,6 @@
   }
   @media (max-width: 768px) {
     .about {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      gap: 10px;
       .images {
         display: block;
         .img {
@@ -128,76 +106,9 @@
       }
       h1 {
         font-size: 36px;
-        font-weight: 600;
-        color: #2a4588;
       }
       p {
         font-size: 16px;
-        color: #3a6ea5;
-        font-weight: 400;
-      }
-    }
-    .box {
-      .information {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        .mainInfo {
-          .lines {
-            position: relative;
-            display: flex;
-          }
-          .horizontalHr {
-            position: absolute;
-            height: 14px;
-            border: 1px solid #ff6f00;
-            transition: left 0.3s ease;
-            top: 2vh;
-          }
-          .line {
-            border: 1px solid #ff6f00;
-            transition: 0.3s;
-            width: 100px;
-          }
-          h2 {
-            font-size: clamp(23px, 3vw, 48px);
-            font-weight: 600;
-            color: #2a4588;
-          }
-          h5 {
-            padding-top: 10px;
-            font-size: clamp(12px, 1vw, 18px);
-            font-weight: 500;
-            color: #3a6ea5;
-          }
-        }
-        .infoCard {
-          line-height: clamp(24px, 3vw, 32px);
-          p {
-            font-size: clamp(12px, 1vw, 18px);
-
-            font-weight: 400;
-            color: #3a6ea5;
-          }
-        }
-        .footInfo {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-          p {
-            display: flex;
-            flex-direction: column;
-            // padding: 0 32px;
-            color: #2a4588;
-            font-weight: 700;
-            // font-size: clamp(18px, 3vw, 20px);
-
-            strong {
-              font-size: clamp(40px, 5vw, 60px);
-            }
-          }
-        }
       }
     }
   }
