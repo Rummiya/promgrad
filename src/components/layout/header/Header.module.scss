@@ -1,1 +1,182 @@
- 
+#Header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: transparent;
+
+  .horizontalHr2 {
+    width: 95%;
+  }
+  .content {
+    position: relative;
+    width: 90%;
+    .horizontalHr1 {
+      position: absolute;
+      width: 105%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .upperHead {
+      padding: 10px 30px;
+      gap: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .verticalHr {
+        height: 130px;
+        position: absolute;
+        left: 0;
+        top: 15%;
+      }
+      .verticalHr2 {
+        height: 130px;
+        position: absolute;
+        right: 0;
+        top: 15%;
+      }
+      .mainNav {
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+
+        .mainLinks {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-weight: 300;
+          gap: 8px;
+
+          li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2a4588;
+            font-size: clamp(10px, 1vw, 14px);
+          }
+        }
+      }
+
+      .messangers {
+        display: flex;
+        gap: 10px;
+        color: #2a4588;
+
+        a {
+          color: inherit;
+
+          svg {
+            font-size: clamp(10px, 1vw, 14px);
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #ff8400;
+            }
+          }
+        }
+      }
+    }
+
+    .minHead {
+      padding: 15px;
+      width: 100%;
+      background: rgba(203, 203, 203, 0.56);
+      backdrop-filter: blur(1px);
+
+      .layer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .minLogo {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          h5 {
+            font-size: clamp(13px, 1vw, 15px);
+            color: #2a4588;
+            line-height: 1.2;
+          }
+        }
+
+        nav {
+          display: flex;
+          justify-content: center;
+          font-weight: 500;
+          gap: max(10px, min(80px, 3vw));
+          color: #2a4588;
+
+          a {
+            transition: color 0.5s;
+            font-size: max(16px, min(18px, 1vw));
+            white-space: nowrap;
+            color: inherit;
+
+            &:hover {
+              color: #ff8400;
+            }
+          }
+        }
+
+        .btn {
+          font-size: max(16px, min(18px, 1vw));
+          font-weight: 500;
+          padding: 8px 20px;
+          background: none;
+          border: solid 1px #ff8400;
+          transition: background-color 0.5s;
+          color: #000;
+
+          &:hover {
+            background: #ff8400;
+          }
+        }
+      }
+
+      .blockMenu {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #Header {
+    .horizontalHr {
+      display: none;
+    }
+    .horizontalHr2 {
+      display: none;
+    }
+
+    .content {
+      width: 100%;
+
+      .upperHead {
+        display: none;
+      }
+
+      .minHead {
+        background: none;
+        backdrop-filter: none;
+
+        .layer {
+          nav {
+            display: none;
+          }
+
+          .btn {
+            display: none;
+          }
+
+          .blockMenu {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}

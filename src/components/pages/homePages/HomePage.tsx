@@ -1,16 +1,14 @@
-import ImageAbout from './home/ImageAbout';
-import Portfolio from './home/Portfolio';
-import Home from './home/Welcome';
+
+import Welcome from "./home/Welcome";
+import AboutUs from "./home/AboutUs";
 
 const HomePage = () => {
-	return (
-		<>
-			<Home />
-			<ImageAbout />
-
-			<Portfolio />
-		</>
-	);
+  return (
+    <>
+      <Welcome/>
+      <AboutUs/>
+    </>
+  );
 };
 
-export default HomePage;
+export default HomePage;  

@@ -1,0 +1,43 @@
+.iconBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 50;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  
+    span {
+      background: black;
+      height: 4px;
+      width: 100%;
+      border-radius: 4px;
+      display: block;
+      transition: all 0.3s ease;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .iconBtn {
+      width: 25px;
+      height: 20px;
+  
+      span {
+        height: 3px;
+      }
+    }
+  }
+  
+  @media (max-width: 300px) {
+    .iconBtn {
+      width: 20px;
+      height: 15px;
+  
+      span {
+        height: 3px;
+      }
+    }
+  }

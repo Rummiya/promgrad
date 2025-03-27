@@ -1,0 +1,128 @@
+#aboutUs {
+  .about {
+    max-width: 670px;
+    width: 100%;
+    padding: 10vh 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    .images {
+      display: none;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: 600;
+      color: #2a4588;
+    }
+    p {
+      font-size: 18px;
+      line-height: 32px;
+      color: #3a6ea5;
+      font-weight: 400;
+    }
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 50px;
+
+    .logos {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .icon {
+        margin: 0 auto;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        .img {
+          width: 80%;
+          height: auto;
+          transition: 0.5s;
+          padding: 20px 0;
+          &:hover {
+            transform: translateY(-10px);
+            filter: drop-shadow(1px 2px 10px #ff8400);
+            box-shadow: 0 5px 2px -2px #ff8400;
+            // filter: invert(25%) sepia(90%) saturate(600%) hue-rotate(-10deg)
+            //   brightness(100%) contrast(100%);
+          }
+        }
+        .active {
+          transform: translateY(-10px);
+          box-shadow: 0 5px 2px -2px #ff8400;
+        }
+      }
+    }
+    .information {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .mainInfo {
+        .lines {
+          position: relative;
+          display: flex;
+        }
+        h2 {
+          font-size: clamp(23px, 5vw, 48px);
+          font-weight: 600;
+          color: #2a4588;
+        }
+        h5 {
+          padding-top: 10px;
+          font-size: clamp(12px, 2vw, 18px);
+          font-weight: 500;
+          color: #3a6ea5;
+        }
+      }
+      .infoCard {
+        line-height: clamp(24px, 3vw, 32px);
+        p {
+          font-size: clamp(14px, 3vw, 18px);
+          font-weight: 400;
+          color: #3a6ea5;
+        }
+      }
+      .footInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        p {
+          display: flex;
+          flex-direction: column;
+          color: #2a4588;
+          font-weight: 700;
+          font-size: clamp(12px, 4vw, 20px);
+          strong {
+            font-size: clamp(35px, 5vw, 60px);
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .about {
+      .images {
+        display: block;
+        .img {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+      h1 {
+        font-size: 36px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
