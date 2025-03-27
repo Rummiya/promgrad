@@ -21,8 +21,6 @@ export const AboutUs = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const imagesRef = useRef<Map<number, HTMLDivElement | null>>(new Map());
 
-
-
   return (
     <section id={scss.aboutUs}>
       <div className="container">
@@ -40,6 +38,9 @@ export const AboutUs = () => {
         </div>
         <div className={scss.box}>
           <div className={scss.logos}>
+            <div>
+              
+            </div>
             {infos.map((info, index) => (
               <div
                 key={index}
@@ -54,10 +55,16 @@ export const AboutUs = () => {
                   setActiveIndex(index);
                 }}
               >
-                <Image className={scss.img} src={info.img} alt={info.title} />
+                <Image
+                  className={`${scss.img} ${
+                    activeIndex === index ? scss.active : ""
+                  }`}
+                  src={info.img}
+                  alt={info.title}
+                />
               </div>
             ))}
-            <div/>
+            <div />
           </div>
           <div className={scss.information}>
             <div className={scss.mainInfo}>
