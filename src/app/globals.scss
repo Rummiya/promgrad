@@ -10,16 +10,25 @@ a {
 }
 
 .container {
-	max-width: 1240px;
-	width: 100%;
-	margin: 0 auto;
-	padding: 0 20px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-button {
-	border: none;
-	cursor: pointer;
+button{
+border:none;
+background: none;
+cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+::-webkit-scrollbar{
+  width: 0;
 }

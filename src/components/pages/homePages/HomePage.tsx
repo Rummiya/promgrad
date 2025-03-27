@@ -1,15 +1,13 @@
-import Contact from './home/Contact';
-import Location from './home/Location';
-import Home from './home/Welcome';
+import Welcome from "./home/Welcome";
+import AboutUs from "./home/AboutUs";
 
 const HomePage = () => {
-	return (
-		<>
-			<Home />
-			<Contact />
-			<Location />
-		</>
-	);
+  return (
+    <>
+      <Welcome/>
+      <AboutUs/>
+    </>
+  );
 };
 
-export default HomePage;
+export default HomePage;  
