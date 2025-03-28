@@ -3,9 +3,11 @@
 	width: 100%;
 	font-size: 18px;
 	outline: none;
+	background: transparent;
 
 	&.primary {
 		border: 1px solid #fff;
+		color: white;
 
 		&::placeholder {
 			color: #fff;

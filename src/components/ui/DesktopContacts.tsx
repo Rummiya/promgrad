@@ -10,7 +10,7 @@ const DesktopContacts = () => {
 				({ id, title, logo, contacts, address, email, socials }) => (
 					<div className={scss.mainContentItem} key={id}>
 						<div className={scss.logo}>
-							<Image src={logo.desktop} alt={title} width={50} height={50} />
+							<Image src={logo.desktop} alt={title} width={40} height={40} />
 							<h4>{title}</h4>
 						</div>
 						<div className={scss.numbers}>

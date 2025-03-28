@@ -28,8 +28,8 @@ const MobileContacts = ({
 					<Image
 						src={logo.mobile}
 						alt={title}
-						width={50}
-						height={50}
+						width={40}
+						height={40}
 						priority
 					/>
 					<h4>{title}</h4>

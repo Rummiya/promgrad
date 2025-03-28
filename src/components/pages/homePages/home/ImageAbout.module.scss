@@ -1,59 +1,65 @@
 .About {
-  .content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
+	.content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
 
-    .mobileWrapper {
-      display: flex;
-      flex-wrap: wrap;
+		.mobileWrapper {
+			display: flex;
+			flex-wrap: wrap;
 
-      .information {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 40px 7%;
-        height: 400px;
+			.information {
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding: 40px 7%;
+				height: 400px;
 
-        h1 {
-          color: #2a4588;
-          font-size: clamp(18px, 1vw, 24px);
-          font-weight: 700;
-          padding-bottom: 20px;
-        }
-        p {
-          color: #3a6ea5;
-          font-size: clamp(16px, 1vw, 18px);
-          font-weight: 400;
-          line-height: clamp(26px, 2vw, 32px);
-        }
-      }
+				h1 {
+					color: #2a4588;
+					font-size: clamp(18px, 1vw, 24px);
+					font-weight: 700;
+					padding-bottom: 20px;
+				}
+				p {
+					color: #3a6ea5;
+					font-size: clamp(16px, 1vw, 18px);
+					font-weight: 400;
+					line-height: clamp(26px, 2vw, 32px);
+				}
+			}
 
-      .images {
-        width: 50%;
-        height: auto;
-        .image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
+			.images {
+				width: 50%;
+				height: auto;
+				.image {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
 
-      @media (max-width: 768px) {
-        .information {
-            width: 100%;
-            padding:  30px 0; 
-            height: auto; 
-          }
-          
-          .images {
-            width: 100%;
-            height: 300px;
-            order: -1;
-          }
-      }
-    }
-  }
+			@media (max-width: 960px) {
+				.information {
+					padding: 30px;
+				}
+			}
+
+			@media (max-width: 768px) {
+				.information {
+					width: 100%;
+					padding: 30px 0;
+					height: auto;
+				}
+
+				.images {
+					width: 100%;
+					height: 300px;
+					order: -1;
+				}
+			}
+		}
+	}
 }
