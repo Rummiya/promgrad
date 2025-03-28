@@ -63,6 +63,7 @@ const Form: FC<FormProps> = ({ variant = 'primary' }) => {
 
 	return (
 		<form className={scss.form} onSubmit={handleSubmit}>
+			
 			<Input
 				name={'name'}
 				type={'text'}
@@ -83,6 +84,7 @@ const Form: FC<FormProps> = ({ variant = 'primary' }) => {
 			<SendBtn
 				isLoading={isLoading}
 				isSuccess={isSuccess}
+				className={scss.submit}
 				variant={variant}
 				type='submit'
 			>

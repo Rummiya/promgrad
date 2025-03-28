@@ -7,8 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useHeaderStore } from "@/Store/store";
 import { minHeadLinks } from "@/constants/links";
 import BurgerMenu from "./BurgerMenu";
+import { usePathname, useRouter } from "next/navigation";
 
 const Menu = forwardRef<HTMLDivElement>(() => {
+  const pathname = usePathname();
+  const router = useRouter();
   const { isOpen, setIsOpen } = useHeaderStore();
 
   useEffect(() => {
@@ -20,6 +23,17 @@ const Menu = forwardRef<HTMLDivElement>(() => {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, [isOpen, setIsOpen]);
+
+  const handleScroll = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const offset = 100;
+      const top = section.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    } else {
+      router.push(`/#${id}`);
+    }
+  };
 
   const menuVariants = {
     hidden: {
@@ -79,17 +93,33 @@ const Menu = forwardRef<HTMLDivElement>(() => {
                 <BurgerMenu />
               </div>
               <div className={scss.minBlock}>
-                {minHeadLinks.map((link, idx) => (
+                {minHeadLinks.map((item, idx) => (
                   <motion.div
                     variants={linkVariants}
                     onClick={() => setIsOpen(false)}
                     key={idx}
                     className={scss.linkBox}
                   >
-                    <Link href={link.link}>{link.title}</Link>
+                    <Link
+                      href={
+                        pathname === "/" ? `#${item.link}` : `/#${item.link}`
+                      }
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleScroll(item.link);
+                      }}
+                    >
+                      {item.title}
+                    </Link>
                   </motion.div>
                 ))}
-                <button onClick={() => setIsOpen(false)} className={scss.btn}>
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    handleScroll("contact");
+                  }}
+                  className={scss.btn}
+                >
                   Есть контакт!
                 </button>
               </div>

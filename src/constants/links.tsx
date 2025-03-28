@@ -10,8 +10,8 @@ import instagramBlueIcon from '@/assets/Footer/socials/instagram-blue.png';
 import instagramIcon from '@/assets/Footer/socials/instagram.png';
 import telegramBlueIcon from '@/assets/Footer/socials/telegram-blue.png';
 import telegramIcon from '@/assets/Footer/socials/telegram.png';
-import whatsappBlueIcon from '@/assets/Footer/socials/whatsApp-blue.png';
-import whatsappIcon from '@/assets/Footer/socials/whatsApp.png';
+import whatsappBlueIcon from '@/assets/Footer/socials/whatsapp-blue.png';
+import whatsappIcon from '@/assets/Footer/socials/whatsapp.png';
 
 import { IFootContent } from '@/types/footer';
 import { StaticImageData } from 'next/image';
@@ -215,7 +215,7 @@ export const minFootLinks = [
 	},
 	{
 		title: 'О Нас',
-		link: '/#',
+		link: '/about',
 	},
 	{
 		title: 'Портфолио',
@@ -226,6 +226,7 @@ export const minFootLinks = [
 		link: '/#',
 	},
 ];
+
 
 // bekza
 export const mainHeadLinks = [
@@ -248,22 +249,22 @@ export const mainHeadLinks = [
 
 export const minHeadLinks = [
 	{
-		title: 'Главная',
-		link: '/#',
+	  title: "Главная",
+	  link: "home",
 	},
 	{
-		title: 'О Нас',
-		link: '/#',
+	  title: "О Нас",
+	  link: "about",
 	},
 	{
-		title: 'Портфолио',
-		link: '/#',
+	  title: "Портфолио",
+	  link: "portfolio",
 	},
 	{
-		title: 'Контакты',
-		link: '/#',
+	  title: "Контакты",
+	  link: "contact",
 	},
-];
+  ];
 
 interface IInfosType {
 	id: number;

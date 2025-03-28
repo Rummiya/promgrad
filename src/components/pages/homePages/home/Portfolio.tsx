@@ -19,7 +19,7 @@ const Portfolio = () => {
     usePortfolio();
 
   return (
-    <section id={scss.gallery}>
+    <section id="portfolio" className={scss.gallery}>
       <div className="container">
         <h1>ПОРТФОЛИО</h1>
         <p>Работы наших организаций</p>

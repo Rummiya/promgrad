@@ -6,7 +6,7 @@ import scss from './Contact.module.scss';
 
 const Contact = () => {
 	return (
-		<section id={scss.contact}>
+		<section id='contact' className={scss.contact}>
 			<div className='container'>
 				<h2>Давайте обсудим ваш проект</h2>
 				<div className={scss.contentWrapper}>

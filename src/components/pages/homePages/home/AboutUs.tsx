@@ -22,7 +22,7 @@ export const AboutUs = () => {
   const imagesRef = useRef<Map<number, HTMLDivElement | null>>(new Map());
 
   return (
-    <section id={scss.aboutUs}>
+    <section id="about" className={scss.aboutUs}>
       <div className="container">
         <div className={scss.about}>
           <div className={scss.images}>
